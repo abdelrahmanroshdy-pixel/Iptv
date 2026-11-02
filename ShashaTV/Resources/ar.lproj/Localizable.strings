@@ -1,0 +1,86 @@
+/* Arabic translation */
+
+/* Tabs & titles */
+"Live TV" = "قنوات مباشرة";
+"Movies" = "أفلام";
+"Series" = "مسلسلات";
+"Episodes" = "حلقات";
+"My List" = "قائمتي";
+"Settings" = "الإعدادات";
+"Channels" = "القنوات";
+"Continue watching" = "تابع المشاهدة";
+"Season" = "الموسم";
+"Season %lld" = "الموسم %lld";
+"Episode %lld" = "الحلقة %lld";
+"%lld" = "%lld";
+"Uncategorized" = "بدون تصنيف";
+
+/* Login */
+"Shasha TV" = "شاشة TV";
+"A simple, light IPTV player" = "مشغل IPTV بسيط وخفيف";
+"Login type" = "طريقة الدخول";
+"Xtream Codes" = "Xtream Codes";
+"M3U link" = "رابط M3U";
+"Server (http://host:port)" = "السيرفر (http://host:port)";
+"Username" = "اسم المستخدم";
+"Password" = "كلمة السر";
+"You get these details from your IPTV provider." = "البيانات دي بتاخدها من مزود الاشتراك بتاعك.";
+"Playlist link (http://...)" = "رابط القائمة (http://...)";
+"Tip: if the link contains username and password, the app switches to Xtream mode automatically, which is faster and uses less data." = "معلومة: لو الرابط فيه اسم المستخدم وكلمة السر، التطبيق هيحوّل لوضع Xtream تلقائيًا، وده أسرع وبيستهلك نت أقل.";
+"Sign in" = "دخول";
+"This app is only a player. It does not include any channels or content. Use your own IPTV subscription." = "التطبيق ده مجرد مشغل، ومفيهوش أي قنوات أو محتوى. استخدم اشتراك الـ IPTV بتاعك.";
+
+/* Browsing */
+"Search" = "بحث";
+"Search categories" = "ابحث في الأقسام";
+"No categories found." = "مفيش أقسام.";
+"Nothing in this category." = "القسم ده فاضي.";
+"Try again" = "حاول تاني";
+"Add to favorites" = "أضف للمفضلة";
+"Remove from favorites" = "شيل من المفضلة";
+"Remove" = "حذف";
+"Nothing here yet. Long-press any channel, movie or series to add it to your favorites." = "لسه مفيش حاجة هنا. اضغط مطوّلًا على أي قناة أو فيلم أو مسلسل علشان تضيفه للمفضلة.";
+
+/* Player */
+"Close" = "إغلاق";
+"This stream can't be played right now. It may be offline, or its format (for example MKV) is not supported by the iPhone player." = "مش قادر أشغل ده دلوقتي. ممكن يكون السيرفر واقف، أو الصيغة (زي MKV) مش مدعومة في مشغل الآيفون.";
+
+/* Settings */
+"Account" = "الحساب";
+"Server" = "السيرفر";
+"Status" = "الحالة";
+"Expires" = "ينتهي في";
+"Connections" = "الاتصالات";
+"Data usage" = "استهلاك النت";
+"Video quality" = "جودة الفيديو";
+"Data saver" = "توفير البيانات";
+"Balanced" = "متوازن";
+"Best quality" = "أعلى جودة";
+"Up to 360p, about 0.3 GB per hour." = "لحد 360p، حوالي 0.3 جيجا في الساعة.";
+"Up to 720p, about 0.8 GB per hour." = "لحد 720p، حوالي 0.8 جيجا في الساعة.";
+"No limit. Uses the most data." = "من غير حد. بيستهلك نت أكتر.";
+"Show posters" = "إظهار الصور";
+"Always" = "دايمًا";
+"Wi-Fi only" = "على الواي فاي بس";
+"Never" = "أبدًا";
+"Refresh lists every" = "تحديث القوائم كل";
+"6 hours" = "6 ساعات";
+"1 day" = "يوم";
+"3 days" = "3 أيام";
+"1 week" = "أسبوع";
+"Channel and movie lists are saved on the phone and only downloaded again after this time, or when you pull down to refresh. The quality limit works on streams that offer several qualities." = "قوائم القنوات والأفلام بتتحفظ على الموبايل ومش بتتحمّل تاني غير بعد المدة دي، أو لما تسحب الشاشة لتحت للتحديث. حد الجودة بيشتغل على البث اللي فيه أكتر من جودة.";
+"Storage" = "التخزين";
+"Cache size" = "حجم الملفات المؤقتة";
+"Clear cache" = "مسح الملفات المؤقتة";
+"Sign out" = "تسجيل خروج";
+"Sign out?" = "تسجيل خروج؟";
+"Shasha TV is only a player and does not provide any content." = "شاشة TV مجرد مشغل ومش بيوفر أي محتوى.";
+
+/* Errors */
+"The server address is not valid." = "عنوان السيرفر مش صحيح.";
+"The playlist link is not valid." = "رابط القائمة مش صحيح.";
+"Sign in failed. Check the server, username and password." = "الدخول فشل. راجع السيرفر واسم المستخدم وكلمة السر.";
+"Your subscription is not active (%@)." = "الاشتراك مش مفعّل (%@).";
+"Server error (%lld)." = "خطأ من السيرفر (%lld).";
+"The playlist is empty or could not be read." = "القائمة فاضية أو مش مقروءة.";
+"Not supported for this account type." = "مش مدعوم في نوع الحساب ده.";

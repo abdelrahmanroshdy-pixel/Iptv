@@ -4,19 +4,23 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-:root{--ink:#141414;--g1:#C9A35E;--g2:#E2C58A;--g3:#F2D899;--olive:#1F4A3B;--cream:#F6F1E7;}
+:root{--ink:#141414;--g1:#C9A35E;--g2:#E2C58A;--g3:#F2D899;--olive:#1F4A3B;--cream:#F2EDE4;--terra:#B65A33;--text:#1E2A24;--brown:#6E5038;--tan:#A88B67;--rule:#DCC7A3;}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 #stage{position:absolute;inset:0;overflow:hidden;font-family:'IBM Plex Sans Arabic',sans-serif}
 .layer{position:absolute;inset:0;opacity:0}
 /* scene 1 */
-#s1{background-color:var(--cream);background-image:radial-gradient(rgba(201,163,94,.35) 2.4px,transparent 2.6px);background-size:44px 44px}
-#pill{position:absolute;top:640px;left:50%;transform:translateX(-50%);background:var(--olive);color:var(--cream);font-weight:600;font-size:40px;padding:12px 40px 16px;border-radius:60px}
-.h1{position:absolute;left:0;right:0;text-align:center;font-family:'El Messiri';font-weight:700;color:var(--ink);font-size:132px;line-height:1.25}
-#h1a{top:770px}#h1b{top:950px}
+#s1{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23C9B998' stroke-width='.8' opacity='.55'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Cpath d='M0 0L12.2 12.2M64 0L51.8 12.2M0 64L12.2 51.8M64 64L51.8 51.8M32 0V12.2M32 64V51.8M0 32H12.2M64 32H51.8'/%3E%3C/g%3E%3C/svg%3E");background-size:96px 96px}
+#s1 .veil{position:absolute;inset:0;background:radial-gradient(ellipse 60% 45% at 50% 50%,#fff 55%,rgba(255,255,255,.6) 100%)}
+#arch{position:absolute;left:0;top:0}
+.divd{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px}
+.divd .l{width:130px;height:2px;background:var(--olive)}.divd .d{width:10px;height:10px;background:var(--olive);transform:rotate(45deg)}.divd .o{width:20px;height:20px;border:2.4px solid var(--terra);transform:rotate(45deg)}
+#pill{position:absolute;top:780px;left:50%;transform:translateX(-50%);background:var(--olive);color:#fff;font-family:'El Messiri';font-weight:600;font-size:42px;padding:22px 64px 8px;border-radius:120px 120px 0 0}
+.h1{position:absolute;left:0;right:0;text-align:center;font-family:'El Messiri';font-weight:700;color:var(--olive);font-size:108px;line-height:1.25}
+#h1a{top:900px}#h1b{top:1060px}
 #hl{position:relative;display:inline-block;padding:0 18px;isolation:isolate}
-#hlband{position:absolute;right:0;bottom:22px;height:62px;background:var(--g2);border-radius:14px;z-index:-1;width:0}
-#hlword{position:relative;color:var(--ink)}
+#hlband{position:absolute;right:0;bottom:22px;height:58px;background:var(--g3);border-radius:14px;z-index:-1;width:0}
+#hlword{position:relative;color:var(--terra)}
 /* white page */
 #white{background:#fff}
 /* passport */
@@ -28,7 +32,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 #visa{position:absolute;width:560px;height:700px;left:260px;top:540px;background:#FBF8F1;border-radius:22px;box-shadow:0 26px 60px rgba(0,0,0,.22);padding:44px;border:2px solid #e8e0cc}
 .vhead{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--g1);padding-bottom:18px}
 .vhead .ar{font-family:'El Messiri';font-weight:700;font-size:54px;color:var(--olive)}
-.vhead .en{font-weight:600;letter-spacing:8px;font-size:30px;color:var(--g1)}
+.vhead .en{font-family:'El Messiri';font-weight:600;letter-spacing:8px;font-size:30px;color:var(--terra)}
 .vbody{display:flex;gap:30px;margin-top:40px}
 .photo{width:170px;height:210px;border-radius:14px;background:#e9e3d4;position:relative;overflow:hidden;flex:none}
 .photo:before{content:'';position:absolute;width:70px;height:70px;border-radius:50%;background:#cfc6b0;left:50px;top:40px}
@@ -52,8 +56,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 #ldoc .lines{gap:18px}#ldoc .ln{height:16px}
 #lbase{width:980px;height:42px;margin-left:-40px;background:linear-gradient(#d8dbdf,#aeb3b9);border-radius:0 0 40px 40px;position:relative}
 #lbase:after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:14px;background:#9aa0a6;border-radius:0 0 14px 14px}
-#stamp{position:absolute;left:330px;top:250px;border:7px solid #1e8e3e;color:#1e8e3e;font-family:'El Messiri';font-weight:700;font-size:56px;padding:2px 30px 10px;border-radius:16px;transform:rotate(-10deg);background:rgba(255,255,255,.55);white-space:nowrap}
-#stamp:before{content:'';position:absolute;inset:5px;border:2px solid #1e8e3e;border-radius:10px}
+#stamp{position:absolute;left:330px;top:250px;border:7px solid var(--olive);color:var(--olive);font-family:'El Messiri';font-weight:700;font-size:56px;padding:2px 30px 10px;border-radius:16px;transform:rotate(-10deg);background:rgba(255,255,255,.55);white-space:nowrap}
+#stamp:before{content:'';position:absolute;inset:5px;border:2px solid var(--olive);border-radius:10px}
 #confetti{position:absolute;inset:0}
 /* search */
 #search{position:absolute;left:90px;right:90px;top:640px;height:128px;background:#fff;border-radius:64px;box-shadow:0 2px 10px rgba(32,33,36,.22);border:1px solid #dfe1e5;display:flex;align-items:center;padding:0 46px}
@@ -66,7 +70,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 /* results */
 #results{position:absolute;left:90px;right:90px;top:620px}
 .res{display:flex;gap:34px;align-items:flex-start;padding:38px 0;border-bottom:1px solid #ebebeb;opacity:0}
-.ico{flex:none;width:112px;height:112px;border-radius:28px;background:#f1f3f4;display:flex;align-items:center;justify-content:center}
+.ico{flex:none;width:112px;height:112px;border-radius:56px 56px 0 0;background:#F6EEE0;display:flex;align-items:center;justify-content:center}
 .rt{flex:1}
 .rt .src{font-size:30px;color:#4d5156;display:flex;align-items:center;gap:14px;margin-bottom:10px}
 .rt .src i{display:block;width:34px;height:34px;border-radius:50%;background:#e8eaed}
@@ -77,8 +81,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 /* dark overlay + todo */
 #dark{background:var(--ink)}
 #todo{position:absolute;left:150px;right:150px;top:760px}
-.td{display:flex;align-items:center;gap:40px;padding:34px 0;border-bottom:2px solid rgba(246,241,231,.12);opacity:0}
-.box{flex:none;width:96px;height:96px;border:5px solid var(--g1);border-radius:24px;position:relative;display:flex;align-items:center;justify-content:center}
+.grain{position:absolute;inset:0;pointer-events:none}
+.td{display:flex;align-items:center;gap:48px;padding:38px 0;border-bottom:1.5px solid rgba(201,163,94,.28);opacity:0}
+.box{flex:none;width:96px;height:96px;position:relative;display:flex;align-items:center;justify-content:center}
+.box .dia{position:absolute;left:16px;top:16px;width:64px;height:64px;border:4px solid var(--g1);transform:rotate(45deg)}
 .box svg{position:absolute}
 .td span{font-family:'El Messiri';font-weight:700;color:var(--cream);font-size:76px}
 /* scene 6 */
@@ -86,9 +92,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 .q6{position:absolute;left:0;right:0;text-align:center;font-family:'Amiri';font-weight:700;color:var(--cream);font-size:124px;line-height:1.3}
 #q6a{top:760px}#q6b{top:940px}
 .w{display:inline-block;opacity:0}
-.gold{color:var(--g2)}
+.gold{background:linear-gradient(115deg,#9A7433 0%,#F2D899 30%,#B98F45 55%,#F2D899 78%,#C9A35E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 6px}
+#div6 .l{background:var(--g1)}#div6 .d{background:var(--g1)}#div6 .o{border-color:var(--g2)}
 /* scene 7 */
-#s7bar{position:absolute;left:90px;right:90px;top:880px;height:132px;background:#232323;border:2px solid #3a3a3a;border-radius:66px;display:flex;align-items:center;padding:0 46px;opacity:0}
+#s7bar{position:absolute;left:90px;right:90px;top:880px;height:132px;background:#1C1C1A;border:2px solid rgba(201,163,94,.5);border-radius:66px;display:flex;align-items:center;padding:0 46px;opacity:0}
 #s7bar .q{font-size:52px;color:var(--cream);flex:1;white-space:nowrap}
 #s7bar .caret{background:var(--g1)}
 </style>
@@ -97,9 +104,16 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 <div id="stage">
   <!-- scene 1 -->
   <div class="layer" id="s1">
+    <svg id="arch" width="1080" height="1920" viewBox="0 0 1080 1920" aria-hidden="true">
+      <g transform="translate(540 320) scale(2.0 1.75) translate(-279.5 -74)">
+        <path d="M60 768V318C60 252 118 222 158 200C214 168 262 136 279.5 74C297 136 345 168 401 200C441 222 499 252 499 318V768Z" fill="#fff" stroke="#B65A33" stroke-width="2.2" vector-effect="non-scaling-stroke"/>
+        <path d="M60 768V318C60 252 118 222 158 200C214 168 262 136 279.5 74C297 136 345 168 401 200C441 222 499 252 499 318V768Z" fill="none" stroke="#C9A35E" stroke-width="1.6" vector-effect="non-scaling-stroke" transform="translate(279.5 421) scale(.955) translate(-279.5 -421)"/>
+      </g>
+    </svg>
     <div id="pill">الحلقة ١</div>
     <div class="h1" id="h1a">جهّزت كل حاجة…</div>
     <div class="h1" id="h1b">إلا <span id="hl"><span id="hlband"></span><span id="hlword">قلبي</span></span></div>
+    <div class="divd" id="div1" style="top:1275px"><span class="l"></span><span class="d"></span><span class="d"></span><span class="o"></span><span class="d"></span><span class="d"></span><span class="l"></span></div>
   </div>
   <!-- white page: scenes 2-5 -->
   <div class="layer" id="white">
@@ -138,13 +152,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
       <div id="rcount"></div>
       <div id="results">
         <div class="res" id="r1"><div class="ico">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="18" rx="2"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11l1.5 1.5 2.5-2.5M8.5 16.5l1.5 1.5 2.5-2.5M14.5 11.5h1.5M14.5 17h1.5"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#B65A33" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="18" rx="2"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11l1.5 1.5 2.5-2.5M8.5 16.5l1.5 1.5 2.5-2.5M14.5 11.5h1.5M14.5 17h1.5"/></svg>
         </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تاخدي إيه معاكي؟</div><div class="sn"><div style="width:95%"></div><div style="width:68%"></div></div></div></div>
         <div class="res" id="r2"><div class="ico">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 15 5v16M15 9.5h3.5A1.5 1.5 0 0 1 20 11v10M2.5 21h19"/><path d="M7.5 7.5h1M11 7.5h1M7.5 11h1M11 11h1M7.5 14.5h1M11 14.5h1M17 13.5h.5M17 17h.5"/><path d="M8.5 21v-3h3v3"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#B65A33" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 15 5v16M15 9.5h3.5A1.5 1.5 0 0 1 20 11v10M2.5 21h19"/><path d="M7.5 7.5h1M11 7.5h1M7.5 11h1M11 11h1M7.5 14.5h1M11 14.5h1M17 13.5h.5M17 17h.5"/><path d="M8.5 21v-3h3v3"/></svg>
         </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تنزلي في أنهي فندق؟</div><div class="sn"><div style="width:90%"></div><div style="width:74%"></div></div></div></div>
         <div class="res" id="r3"><div class="ico">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.2l-7.3 7.3a1.6 1.6 0 0 1-2.3 0L3.5 13.1V3.5h9.6l7.4 7.4a1.6 1.6 0 0 1 0 2.3z"/><circle cx="8" cy="8" r="1.6"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#B65A33" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.2l-7.3 7.3a1.6 1.6 0 0 1-2.3 0L3.5 13.1V3.5h9.6l7.4 7.4a1.6 1.6 0 0 1 0 2.3z"/><circle cx="8" cy="8" r="1.6"/></svg>
         </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تشتري إيه وإنتي راجعة؟</div><div class="sn"><div style="width:93%"></div><div style="width:60%"></div></div></div></div>
       </div>
       <div id="search">
@@ -157,19 +171,25 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
         <div class="sg"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg><span>إزاي أجهّز للعمرة <b>بسرعة</b></span></div>
       </div>
     </div>
+    <img id="bagimg" alt="" style="position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;opacity:0">
   </div>
+  <!-- real footage / photos -->
+  <div class="layer" id="real" style="overflow:hidden"><img id="rimg" alt="" style="position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover"></div>
   <!-- scene 5 dark -->
   <div class="layer" id="dark">
+    <svg class="grain" width="1080" height="1920" aria-hidden="true"><filter id="gra" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/></filter><rect width="1080" height="1920" filter="url(#gra)"/></svg>
     <div id="todo">
-      <div class="td" id="t1"><div class="box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck1" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>جهّزت كل حاجة</span></div>
-      <div class="td" id="t2"><div class="box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck2" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>ليستة الشوبنج</span></div>
+      <div class="td" id="t1"><div class="box"><span class="dia"></span><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck1" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>جهّزت كل حاجة</span></div>
+      <div class="td" id="t2"><div class="box"><span class="dia"></span><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck2" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>ليستة الشوبنج</span></div>
     </div>
   </div>
   <!-- scene 6/7 -->
   <div class="layer" id="s6">
+    <svg class="grain" width="1080" height="1920" aria-hidden="true"><filter id="grb" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/></filter><rect width="1080" height="1920" filter="url(#grb)"/></svg>
     <div id="q6">
       <div class="q6" id="q6a"><span class="w">محدش</span> <span class="w">قالي</span></div>
       <div class="q6" id="q6b"><span class="w">أجهّز</span> <span class="w gold">قلبي</span> <span class="w">إزاي.</span></div>
+      <div class="divd" id="div6" style="top:1160px;opacity:0"><span class="l"></span><span class="d"></span><span class="d"></span><span class="o"></span><span class="d"></span><span class="d"></span><span class="l"></span></div>
     </div>
     <div id="s7bar">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#C9A35E" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg>
@@ -179,14 +199,20 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
 </div>
 <script>
 const T = window.T = {
-  // all times in seconds, taken from the voice take (silence detection)
-  s1end:5.70, pass:5.89, visa:6.69, lap:8.13, stamp:8.75, s2end:10.78,
-  type3:[11.0,13.55], sugg:12.75, enter:13.95, s3end:14.20,
-  r:[15.22,16.37,17.74], s4end:19.25,
-  blur:19.36, ck:[20.93,22.55], s5end:24.0,
-  w6:[24.40,24.95,25.62,26.02,26.45], s6end:27.35,
-  tick7:27.65, bar7:27.75, type7:[28.05,29.45], end:30.0
+  // all times in seconds, taken from the user's own recording (after the cut)
+  s1end:12.95, pulse:7.94, pass:99, visa:99, lap:14.5, stamp:14.95, s2end:16.25,
+  type3:[16.9,20.2], sugg:19.45, enter:20.42, s3end:20.6,
+  r:[21.35,22.85,24.55], s4end:25.9,
+  blur:27.0, bag:25.9, ck:[27.95,30.40], s5end:31.85,
+  w6:[34.00,34.50,37.74,38.22,39.18], s6end:40.25,
+  tick7:40.6, bar7:40.7, type7:[41.0,42.4], end:43.0
 };
+// real footage: [start, end, folder, frames] (output seconds)
+const CLIPS=[[3.94,7.86,'win',117],[9.72,12.98,'plane',96]];
+const PHOTOS=[[12.92,13.74,'pink_v.jpg','30% 78%',1.0,1.09],[13.74,14.58,'black_v.jpg','33% 42%',1.04,1.13]];
+const pad=n=>String(n).padStart(4,'0');
+let lastSrc={};
+function setSrc(el,src){ if(lastSrc[el.id]!==src){ lastSrc[el.id]=src; el.src=src; return el.decode().catch(()=>{});} return Promise.resolve(); }
 const Q3 = 'إزاي أجهّز للعمرة';
 const Q7 = 'طب أنا هجهّز قلبي إزاي؟';
 function clusters(s){const out=[];for(const ch of Array.from(s)){if(/[ً-ْٰ]/.test(ch)&&out.length)out[out.length-1]+=ch;else out.push(ch);}return out;}
@@ -202,7 +228,7 @@ function typed(C,t,a,b){const n=Math.round(C.length*lin(t,a,b));return C.slice(0
 function caretOn(t,typing){return typing?1:((Math.floor(t*2.2)%2)?0:1);}
 // confetti
 function rnd(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
-const cols=['#C9A35E','#E2C58A','#F2D899','#1F4A3B','#1e8e3e','#1a73e8'];
+const cols=['#C9A35E','#E2C58A','#F2D899','#1F4A3B','#B65A33','#A88B67'];
 function confetti(t){const cv=$('confetti'),ctx=cv.getContext('2d');ctx.clearRect(0,0,1080,1920);
   const dt=t-(T.stamp+0.12); if(dt<0||dt>1.5) return;
   for(let i=0;i<48;i++){const side=i%2?1:-1; const a=-Math.PI/2+side*(0.35+rnd(i)*1.0), sp=700+rnd(i+99)*600;
@@ -212,6 +238,7 @@ function confetti(t){const cv=$('confetti'),ctx=cv.getContext('2d');ctx.clearRec
     ctx.fillStyle=cols[i%cols.length]; if(i%3==0){ctx.beginPath();ctx.arc(0,0,8,0,7);ctx.fill();} else ctx.fillRect(-12,-6,24,12); ctx.restore();}
 }
 window.render=function(t){
+  const waits=[];
   // ---------- scene 1
   const s1=$('s1');
   const s1out=lin(t,T.s1end-0.25,T.s1end+0.1);
@@ -219,7 +246,10 @@ window.render=function(t){
   const p=eo(lin(t,0.0,0.35)); set($('pill'),p,`translateX(-50%) translateY(${(1-p)*30}px)`);
   const a=eo(lin(t,0.1,0.5)); set($('h1a'),a,`translateY(${(1-a)*60}px)`);
   const b=eo(lin(t,0.45,0.85)); set($('h1b'),b,`translateY(${(1-b)*60}px)`);
+  const ar=eo(lin(t,0,0.6)); $('arch').style.opacity=ar; $('arch').style.transform=`translateY(${(1-ar)*40}px)`;
+  const dv=eo(lin(t,0.9,1.4)); set($('div1'),dv,`scaleX(${0.4+0.6*dv})`);
   $('hlband').style.width=(100*eio(lin(t,0.95,1.4)))+'%';
+  $('hl').style.transform=`scale(${1+0.08*Math.sin(Math.PI*lin(t,T.pulse,T.pulse+0.5))})`;
   // ---------- white page (scenes 2-4)
   const wIn=lin(t,T.s1end-0.25,T.s1end+0.1);
   $('white').style.opacity=wIn;
@@ -259,18 +289,29 @@ window.render=function(t){
   [['t1',T.ck[0]],['t2',T.ck[1]]].forEach(([id,tc],i)=>{const r=eo(lin(t,tc-0.55,tc-0.2));set($(id),r*tdo,`translateY(${(1-r)*40}px)`);
     $('ck'+(i+1)).setAttribute('stroke-dashoffset',22*(1-eo(lin(t,tc,tc+0.25))));
     $(id).querySelector('.box').style.transform=`scale(${1+0.12*Math.sin(Math.PI*lin(t,tc,tc+0.3))})`;
-    $(id).querySelector('.box').style.background=`rgba(201,163,94,${0.18*lin(t,tc,tc+0.25)})`;});
+    $(id).querySelector('.dia').style.background=`rgba(201,163,94,${0.22*lin(t,tc,tc+0.25)})`;});
   // ---------- scene 6
   const s6=$('s6'); s6.style.opacity=lin(t,T.s5end-0.3,T.s5end);
   const ws=s6.querySelectorAll('.w');
   const q6out=lin(t,T.s6end-0.1,T.s6end+0.35);
   ws.forEach((w,i)=>{const r=eo(lin(t,T.w6[i],T.w6[i]+0.35));w.style.opacity=r*(1-q6out);w.style.transform=`translateY(${(1-r)*30}px)`;});
+  const d6=eo(lin(t,T.w6[4]+0.2,T.w6[4]+0.7)); set($('div6'),d6*(1-q6out),`scaleX(${0.4+0.6*d6})`);
   // ---------- scene 7
+  // ---------- real footage layer
+  const R=$('real'), ri=$('rimg'); let rop=0;
+  for(const [a,b,dir,n] of CLIPS){ if(t>=a-0.12&&t<b+0.08){ const k=Math.min(n,Math.max(1,1+Math.floor((t-a)*30))); waits.push(setSrc(ri,`../real/${dir}/${pad(k)}.jpg`)); ri.style.transform='none';
+      rop=lin(t,a-0.1,a+0.04)*(1-lin(t,b-0.04,b+0.08)); } }
+  for(const [a,b,f,org,s0,s1] of PHOTOS){ if(t>=a&&t<b+0.1){ waits.push(setSrc(ri,`../real/${f}`)); ri.style.transformOrigin=org; ri.style.transform=`scale(${s0+(s1-s0)*lin(t,a,b)})`; rop=1-lin(t,14.52,14.62); } }
+  R.style.opacity=rop;
+  // bag clip inside the white page (gets the blur of scene 5)
+  const bi=$('bagimg'); const bo=t>=T.bag-0.05?lin(t,T.bag-0.05,T.bag+0.05):0; bi.style.opacity=bo;
+  if(bo>0){ const k=Math.min(75,Math.max(1,1+Math.floor((t-T.bag)*30))); waits.push(setSrc(bi,`../real/bag/${pad(k)}.jpg`)); }
   const b7=eo(lin(t,T.bar7,T.bar7+0.35));
   set($('s7bar'),b7,`translateY(${(1-b7)*30}px)`);
   $('q7text').textContent=typed(C7,t,T.type7[0],T.type7[1]);
   const typing7=t>=T.type7[0]&&t<=T.type7[1]+0.05;
   $('caret7').style.opacity=t>T.type7[1]+0.25?0:caretOn(t,typing7);
+  return Promise.all(waits);
 };
 window.ready=document.fonts.ready.then(()=>{render(0);return true;});
 </script>

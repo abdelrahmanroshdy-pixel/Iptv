@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{--ink:#141414;--g1:#C9A35E;--g2:#E2C58A;--g3:#F2D899;--olive:#1F4A3B;--cream:#F6F1E7;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
+#stage{position:absolute;inset:0;overflow:hidden;font-family:'IBM Plex Sans Arabic',sans-serif}
+.layer{position:absolute;inset:0;opacity:0}
+/* scene 1 */
+#s1{background-color:var(--cream);background-image:radial-gradient(rgba(201,163,94,.35) 2.4px,transparent 2.6px);background-size:44px 44px}
+#pill{position:absolute;top:640px;left:50%;transform:translateX(-50%);background:var(--olive);color:var(--cream);font-weight:600;font-size:40px;padding:12px 40px 16px;border-radius:60px}
+.h1{position:absolute;left:0;right:0;text-align:center;font-family:'El Messiri';font-weight:700;color:var(--ink);font-size:132px;line-height:1.25}
+#h1a{top:770px}#h1b{top:950px}
+#hl{position:relative;display:inline-block;padding:0 18px;isolation:isolate}
+#hlband{position:absolute;right:0;bottom:22px;height:62px;background:var(--g2);border-radius:14px;z-index:-1;width:0}
+#hlword{position:relative;color:var(--ink)}
+/* white page */
+#white{background:#fff}
+/* passport */
+#passport{position:absolute;width:470px;height:660px;left:305px;top:560px;background:linear-gradient(160deg,#24523f,#173a2d);border-radius:26px;box-shadow:0 30px 60px rgba(0,0,0,.25),inset -14px 0 0 rgba(0,0,0,.18);color:var(--g2);text-align:center}
+#passport .t1{font-family:'El Messiri';font-weight:700;font-size:58px;margin-top:80px}
+#passport .t2{font-family:'IBM Plex Sans Arabic';font-weight:500;letter-spacing:10px;font-size:30px;margin-top:6px}
+#passport svg{margin-top:70px}
+#passport .chip{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);width:70px;height:46px;border:3px solid var(--g2);border-radius:10px}
+#visa{position:absolute;width:560px;height:700px;left:260px;top:540px;background:#FBF8F1;border-radius:22px;box-shadow:0 26px 60px rgba(0,0,0,.22);padding:44px;border:2px solid #e8e0cc}
+.vhead{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--g1);padding-bottom:18px}
+.vhead .ar{font-family:'El Messiri';font-weight:700;font-size:54px;color:var(--olive)}
+.vhead .en{font-weight:600;letter-spacing:8px;font-size:30px;color:var(--g1)}
+.vbody{display:flex;gap:30px;margin-top:40px}
+.photo{width:170px;height:210px;border-radius:14px;background:#e9e3d4;position:relative;overflow:hidden;flex:none}
+.photo:before{content:'';position:absolute;width:70px;height:70px;border-radius:50%;background:#cfc6b0;left:50px;top:40px}
+.photo:after{content:'';position:absolute;width:140px;height:110px;border-radius:70px 70px 0 0;background:#cfc6b0;left:15px;top:125px}
+.lines{flex:1;display:flex;flex-direction:column;gap:24px;padding-top:8px}
+.ln{height:20px;border-radius:10px;background:#e4dccb}
+.mrz{margin-top:60px;display:flex;flex-direction:column;gap:18px}
+.mrz div{height:16px;border-radius:8px;background:repeating-linear-gradient(90deg,#d9d0bb 0 22px,transparent 22px 30px)}
+/* laptop */
+#laptop{position:absolute;left:90px;top:560px;width:900px}
+#lscreen{width:900px;height:590px;background:#1b1b1b;border-radius:30px 30px 8px 8px;padding:26px;position:relative}
+#lview{width:100%;height:100%;background:#f4f6f8;border-radius:10px;overflow:hidden;position:relative}
+#lbar{height:44px;background:#e6e9ed;display:flex;align-items:center;gap:10px;padding:0 18px;direction:ltr}
+#lbar i{width:14px;height:14px;border-radius:50%;background:#c6cbd1;display:block}
+#lbar b{flex:1;height:22px;border-radius:11px;background:#fff;margin-left:20px}
+#ldoc{position:absolute;left:50%;top:80px;transform:translateX(-50%);width:600px;height:400px;background:#FBF8F1;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:28px;border:2px solid #e8e0cc}
+#ldoc .vhead .ar{font-size:40px}#ldoc .vhead .en{font-size:22px}
+#ldoc .photo{width:120px;height:150px}
+#ldoc .photo:before{width:50px;height:50px;left:35px;top:28px}
+#ldoc .photo:after{width:100px;height:80px;left:10px;top:90px}
+#ldoc .lines{gap:18px}#ldoc .ln{height:16px}
+#lbase{width:980px;height:42px;margin-left:-40px;background:linear-gradient(#d8dbdf,#aeb3b9);border-radius:0 0 40px 40px;position:relative}
+#lbase:after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:14px;background:#9aa0a6;border-radius:0 0 14px 14px}
+#stamp{position:absolute;left:330px;top:250px;border:7px solid #1e8e3e;color:#1e8e3e;font-family:'El Messiri';font-weight:700;font-size:56px;padding:2px 30px 10px;border-radius:16px;transform:rotate(-10deg);background:rgba(255,255,255,.55);white-space:nowrap}
+#stamp:before{content:'';position:absolute;inset:5px;border:2px solid #1e8e3e;border-radius:10px}
+#confetti{position:absolute;inset:0}
+/* search */
+#search{position:absolute;left:90px;right:90px;top:640px;height:128px;background:#fff;border-radius:64px;box-shadow:0 2px 10px rgba(32,33,36,.22);border:1px solid #dfe1e5;display:flex;align-items:center;padding:0 46px}
+#search .q{font-size:50px;color:#202124;flex:1;white-space:nowrap}
+.caret{display:inline-block;width:4px;height:58px;background:#1a73e8;vertical-align:middle;margin-right:4px}
+#search svg{flex:none}
+#sugg{position:absolute;left:90px;right:90px;top:768px;background:#fff;border-radius:0 0 40px 40px;box-shadow:0 6px 10px rgba(32,33,36,.18);border:1px solid #dfe1e5;border-top:1px solid #e8eaed;overflow:hidden;opacity:0}
+.sg{display:flex;align-items:center;gap:28px;height:104px;padding:0 50px;font-size:42px;color:#202124}
+.sg b{font-weight:600}
+/* results */
+#results{position:absolute;left:90px;right:90px;top:620px}
+.res{display:flex;gap:34px;align-items:flex-start;padding:38px 0;border-bottom:1px solid #ebebeb;opacity:0}
+.ico{flex:none;width:112px;height:112px;border-radius:28px;background:#f1f3f4;display:flex;align-items:center;justify-content:center}
+.rt{flex:1}
+.rt .src{font-size:30px;color:#4d5156;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.rt .src i{display:block;width:34px;height:34px;border-radius:50%;background:#e8eaed}
+.rt .ti{font-size:56px;color:#1a0dab;font-weight:500;line-height:1.35}
+.rt .sn{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+.rt .sn div{height:18px;border-radius:9px;background:#e3e5e8}
+#rcount{position:absolute;left:90px;right:90px;top:560px;height:4px;background:#e8eaed;opacity:0}
+/* dark overlay + todo */
+#dark{background:var(--ink)}
+#todo{position:absolute;left:150px;right:150px;top:760px}
+.td{display:flex;align-items:center;gap:40px;padding:34px 0;border-bottom:2px solid rgba(246,241,231,.12);opacity:0}
+.box{flex:none;width:96px;height:96px;border:5px solid var(--g1);border-radius:24px;position:relative;display:flex;align-items:center;justify-content:center}
+.box svg{position:absolute}
+.td span{font-family:'El Messiri';font-weight:700;color:var(--cream);font-size:76px}
+/* scene 6 */
+#s6{background:var(--ink)}
+.q6{position:absolute;left:0;right:0;text-align:center;font-family:'Amiri';font-weight:700;color:var(--cream);font-size:124px;line-height:1.3}
+#q6a{top:760px}#q6b{top:940px}
+.w{display:inline-block;opacity:0}
+.gold{color:var(--g2)}
+/* scene 7 */
+#s7bar{position:absolute;left:90px;right:90px;top:880px;height:132px;background:#232323;border:2px solid #3a3a3a;border-radius:66px;display:flex;align-items:center;padding:0 46px;opacity:0}
+#s7bar .q{font-size:52px;color:var(--cream);flex:1;white-space:nowrap}
+#s7bar .caret{background:var(--g1)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- scene 1 -->
+  <div class="layer" id="s1">
+    <div id="pill">الحلقة ١</div>
+    <div class="h1" id="h1a">جهّزت كل حاجة…</div>
+    <div class="h1" id="h1b">إلا <span id="hl"><span id="hlband"></span><span id="hlword">قلبي</span></span></div>
+  </div>
+  <!-- white page: scenes 2-5 -->
+  <div class="layer" id="white">
+    <div id="g2">
+      <div id="passport">
+        <div class="t1">جواز سفر</div>
+        <div class="t2">PASSPORT</div>
+        <svg width="190" height="190" viewBox="0 0 100 100" fill="none" stroke="#E2C58A" stroke-width="2.4">
+          <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="36"/>
+          <rect x="24" y="24" width="52" height="52"/><rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"/>
+          <circle cx="50" cy="50" r="9"/>
+        </svg>
+        <div class="chip"></div>
+      </div>
+      <div id="visa">
+        <div class="vhead"><div class="ar">تأشيرة</div><div class="en">VISA</div></div>
+        <div class="vbody"><div class="photo"></div>
+          <div class="lines"><div class="ln" style="width:90%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:82%"></div><div class="ln" style="width:55%"></div><div class="ln" style="width:75%"></div></div></div>
+        <div class="mrz"><div></div><div></div></div>
+      </div>
+      <div id="laptop">
+        <div id="lscreen"><div id="lview">
+          <div id="lbar"><i></i><i></i><i></i><b></b></div>
+          <div id="ldoc">
+            <div class="vhead"><div class="ar">تأشيرة</div><div class="en">VISA</div></div>
+            <div class="vbody"><div class="photo"></div>
+              <div class="lines"><div class="ln" style="width:90%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:82%"></div><div class="ln" style="width:55%"></div></div></div>
+          </div>
+          <div id="stamp">تمّت الموافقة</div>
+        </div></div>
+        <div id="lbase"></div>
+      </div>
+      <canvas id="confetti" width="1080" height="1920"></canvas>
+    </div>
+    <div id="g3">
+      <div id="rcount"></div>
+      <div id="results">
+        <div class="res" id="r1"><div class="ico">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="18" rx="2"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11l1.5 1.5 2.5-2.5M8.5 16.5l1.5 1.5 2.5-2.5M14.5 11.5h1.5M14.5 17h1.5"/></svg>
+        </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تاخدي إيه معاكي؟</div><div class="sn"><div style="width:95%"></div><div style="width:68%"></div></div></div></div>
+        <div class="res" id="r2"><div class="ico">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 15 5v16M15 9.5h3.5A1.5 1.5 0 0 1 20 11v10M2.5 21h19"/><path d="M7.5 7.5h1M11 7.5h1M7.5 11h1M11 11h1M7.5 14.5h1M11 14.5h1M17 13.5h.5M17 17h.5"/><path d="M8.5 21v-3h3v3"/></svg>
+        </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تنزلي في أنهي فندق؟</div><div class="sn"><div style="width:90%"></div><div style="width:74%"></div></div></div></div>
+        <div class="res" id="r3"><div class="ico">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.2l-7.3 7.3a1.6 1.6 0 0 1-2.3 0L3.5 13.1V3.5h9.6l7.4 7.4a1.6 1.6 0 0 1 0 2.3z"/><circle cx="8" cy="8" r="1.6"/></svg>
+        </div><div class="rt"><div class="src"><i></i><span>دليل العمرة</span></div><div class="ti">تشتري إيه وإنتي راجعة؟</div><div class="sn"><div style="width:93%"></div><div style="width:60%"></div></div></div></div>
+      </div>
+      <div id="search">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg>
+        <div class="q" style="margin-right:30px"><span id="qtext"></span><span class="caret" id="caret"></span></div>
+      </div>
+      <div id="sugg">
+        <div class="sg"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg><span>إزاي أجهّز للعمرة <b>أول مرة</b></span></div>
+        <div class="sg"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg><span>إزاي أجهّز للعمرة <b>خطوة بخطوة</b></span></div>
+        <div class="sg"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg><span>إزاي أجهّز للعمرة <b>بسرعة</b></span></div>
+      </div>
+    </div>
+  </div>
+  <!-- scene 5 dark -->
+  <div class="layer" id="dark">
+    <div id="todo">
+      <div class="td" id="t1"><div class="box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck1" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>جهّزت كل حاجة</span></div>
+      <div class="td" id="t2"><div class="box"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F2D899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path id="ck2" d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="22" stroke-dashoffset="22"/></svg></div><span>ليستة الشوبنج</span></div>
+    </div>
+  </div>
+  <!-- scene 6/7 -->
+  <div class="layer" id="s6">
+    <div id="q6">
+      <div class="q6" id="q6a"><span class="w">محدش</span> <span class="w">قالي</span></div>
+      <div class="q6" id="q6b"><span class="w">أجهّز</span> <span class="w gold">قلبي</span> <span class="w">إزاي.</span></div>
+    </div>
+    <div id="s7bar">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#C9A35E" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg>
+      <div class="q" style="margin-right:30px"><span id="q7text"></span><span class="caret" id="caret7"></span></div>
+    </div>
+  </div>
+</div>
+<script>
+const T = window.T = {
+  // all times in seconds, taken from the voice take (silence detection)
+  s1end:5.70, pass:5.89, visa:6.69, lap:8.13, stamp:8.75, s2end:10.78,
+  type3:[11.0,13.55], sugg:12.75, enter:13.95, s3end:14.20,
+  r:[15.22,16.37,17.74], s4end:19.25,
+  blur:19.36, ck:[20.93,22.55], s5end:24.0,
+  w6:[24.40,24.95,25.62,26.02,26.45], s6end:27.35,
+  tick7:27.65, bar7:27.75, type7:[28.05,29.45], end:30.0
+};
+const Q3 = 'إزاي أجهّز للعمرة';
+const Q7 = 'طب أنا هجهّز قلبي إزاي؟';
+function clusters(s){const out=[];for(const ch of Array.from(s)){if(/[ً-ْٰ]/.test(ch)&&out.length)out[out.length-1]+=ch;else out.push(ch);}return out;}
+const C3=clusters(Q3), C7=clusters(Q7);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const lin=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+const $=id=>document.getElementById(id);
+function set(el,o,tf){el.style.opacity=o;if(tf!==undefined)el.style.transform=tf;}
+function typed(C,t,a,b){const n=Math.round(C.length*lin(t,a,b));return C.slice(0,n).join('');}
+function caretOn(t,typing){return typing?1:((Math.floor(t*2.2)%2)?0:1);}
+// confetti
+function rnd(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+const cols=['#C9A35E','#E2C58A','#F2D899','#1F4A3B','#1e8e3e','#1a73e8'];
+function confetti(t){const cv=$('confetti'),ctx=cv.getContext('2d');ctx.clearRect(0,0,1080,1920);
+  const dt=t-(T.stamp+0.12); if(dt<0||dt>1.5) return;
+  for(let i=0;i<48;i++){const side=i%2?1:-1; const a=-Math.PI/2+side*(0.35+rnd(i)*1.0), sp=700+rnd(i+99)*600;
+    const x0=side>0?940:150, y0=600;
+    const x=x0+Math.cos(a)*sp*dt, y=y0+Math.sin(a)*sp*dt+900*dt*dt;
+    const al=cl(1-(dt-0.9)/0.6);ctx.save();ctx.globalAlpha=al;ctx.translate(x,y);ctx.rotate(dt*9*(rnd(i+5)-.5)+i);
+    ctx.fillStyle=cols[i%cols.length]; if(i%3==0){ctx.beginPath();ctx.arc(0,0,8,0,7);ctx.fill();} else ctx.fillRect(-12,-6,24,12); ctx.restore();}
+}
+window.render=function(t){
+  // ---------- scene 1
+  const s1=$('s1');
+  const s1out=lin(t,T.s1end-0.25,T.s1end+0.1);
+  set(s1,1-s1out,`scale(${1+0.04*lin(t,0,T.s1end)})`);
+  const p=eo(lin(t,0.0,0.35)); set($('pill'),p,`translateX(-50%) translateY(${(1-p)*30}px)`);
+  const a=eo(lin(t,0.1,0.5)); set($('h1a'),a,`translateY(${(1-a)*60}px)`);
+  const b=eo(lin(t,0.45,0.85)); set($('h1b'),b,`translateY(${(1-b)*60}px)`);
+  $('hlband').style.width=(100*eio(lin(t,0.95,1.4)))+'%';
+  // ---------- white page (scenes 2-4)
+  const wIn=lin(t,T.s1end-0.25,T.s1end+0.1);
+  $('white').style.opacity=wIn;
+  const g2=$('g2'), g3=$('g3');
+  // passport
+  const ps=back(lin(t,T.pass,T.pass+0.45));
+  const vs=eo(lin(t,T.visa,T.visa+0.5));
+  const lp=eio(lin(t,T.lap-0.1,T.lap+0.45));
+  set($('passport'),cl(ps*3)*(1-lp),`translateX(${-vs*190}px) rotate(${-vs*8}deg) scale(${(0.6+0.4*ps)*(1-0.2*lp)})`);
+  set($('visa'),vs*(1-lp),`translateX(${(1-vs)*900+vs*120}px) rotate(${(1-vs)*10+vs*4}deg)`);
+  set($('laptop'),lp,`translateY(${(1-lp)*120}px) scale(${0.92+0.08*lp})`);
+  const st=lin(t,T.stamp,T.stamp+0.18);
+  set($('stamp'),st,`rotate(-10deg) scale(${1.8-0.8*eo(st)})`);
+  confetti(t);
+  const s2out=lin(t,T.s2end-0.25,T.s2end+0.05);
+  g2.style.opacity=1-s2out; g2.style.transform=`translateY(${-s2out*80}px)`;
+  // search (scenes 3-4)
+  const s3in=eo(lin(t,T.s2end-0.05,T.s2end+0.35));
+  g3.style.opacity=s3in;
+  const moveUp=eio(lin(t,T.enter,T.enter+0.4));
+  $('search').style.transform=`translateY(${(1-s3in)*60 - moveUp*330}px)`;
+  $('qtext').textContent=typed(C3,t,T.type3[0],T.type3[1]);
+  const typing3=t>=T.type3[0]&&t<=T.type3[1]+0.05;
+  $('caret').style.opacity=(t<T.enter?caretOn(t,typing3):0);
+  const sg=lin(t,T.sugg,T.sugg+0.25)*(1-lin(t,T.enter,T.enter+0.12));
+  set($('sugg'),sg,`translateY(${(1-sg)*-10}px)`);
+  $('sugg').querySelectorAll('.sg').forEach((e,i)=>{e.style.opacity=lin(t,T.sugg+i*0.12,T.sugg+i*0.12+0.2);});
+  set($('rcount'),lin(t,T.enter+0.3,T.enter+0.5));
+  ['r1','r2','r3'].forEach((id,i)=>{const r=eo(lin(t,T.r[i],T.r[i]+0.4));set($(id),r,`translateY(${(1-r)*50}px)`);});
+  // ---------- scene 5: blur + darken
+  const bl=eio(lin(t,T.blur,T.blur+0.9));
+  $('white').style.filter=bl>0?`blur(${bl*14}px)`:'none';
+  const dk=$('dark'); dk.style.opacity=bl*0.9 + 0.1*lin(t,T.s5end-0.4,T.s5end);
+  dk.style.background=`rgba(20,20,20,${0.88+0.12*lin(t,T.s5end-0.4,T.s5end)})`;
+  if(t>T.s5end) $('white').style.opacity=0;
+  const tdo=1-lin(t,T.s5end-0.3,T.s5end+0.05);
+  [['t1',T.ck[0]],['t2',T.ck[1]]].forEach(([id,tc],i)=>{const r=eo(lin(t,tc-0.55,tc-0.2));set($(id),r*tdo,`translateY(${(1-r)*40}px)`);
+    $('ck'+(i+1)).setAttribute('stroke-dashoffset',22*(1-eo(lin(t,tc,tc+0.25))));
+    $(id).querySelector('.box').style.transform=`scale(${1+0.12*Math.sin(Math.PI*lin(t,tc,tc+0.3))})`;
+    $(id).querySelector('.box').style.background=`rgba(201,163,94,${0.18*lin(t,tc,tc+0.25)})`;});
+  // ---------- scene 6
+  const s6=$('s6'); s6.style.opacity=lin(t,T.s5end-0.3,T.s5end);
+  const ws=s6.querySelectorAll('.w');
+  const q6out=lin(t,T.s6end-0.1,T.s6end+0.35);
+  ws.forEach((w,i)=>{const r=eo(lin(t,T.w6[i],T.w6[i]+0.35));w.style.opacity=r*(1-q6out);w.style.transform=`translateY(${(1-r)*30}px)`;});
+  // ---------- scene 7
+  const b7=eo(lin(t,T.bar7,T.bar7+0.35));
+  set($('s7bar'),b7,`translateY(${(1-b7)*30}px)`);
+  $('q7text').textContent=typed(C7,t,T.type7[0],T.type7[1]);
+  const typing7=t>=T.type7[0]&&t<=T.type7[1]+0.05;
+  $('caret7').style.opacity=t>T.type7[1]+0.25?0:caretOn(t,typing7);
+};
+window.ready=document.fonts.ready.then(()=>{render(0);return true;});
+</script>
+</body>
+</html>
